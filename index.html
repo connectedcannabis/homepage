@@ -35,6 +35,22 @@
     }
     body{
       background-color: #fffdeb;
+      position: relative;
+      margin:0;
+    }
+    .background-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-image: url('backgroun.png');
+      background-size: contain;         /* or 'cover', or set width/height */
+      background-repeat: no-repeat;
+      background-position: center;
+      opacity: 0.25;                    /* image transparency */
+      z-index: -1;                      /* stay behind everything */
+      pointer-events: none;             /* allow clicking through */
     }
   </style>
 </head>
@@ -44,104 +60,104 @@
       <h1><b>CULTIVATION ANALYTICS DASHBOARDS</b></h1>
     </div>
   </header>
-
+  <div class="background-overlay">
+  </div>
   <div class="container">
-    <div class="row g-4 mb-4">
-      <!-- Repeat this block for each chart -->
-      <div class="col-md-4">
-        <div class="card h-100">
-          <div class="card-header">California Yield Projections by Site</div>
-          <div class="card-body">
-            <img src="chart.png" alt="Chart 1 thumbnail" class="chart-thumb mb-2" />
-            <p class="small text-muted justify">
-              This chart uses the updated room yield goals and site processing times, to forecast Est. LTB for all of California to the end of 2026. Data is filterable by harvest date or FGI date and can be displayed in a weekly or monthly format.</br><i>Updated: 6/24/2025</i>
-            </p>
-            <div class="d-grid">
-              <button class="btn btn-outline-primary" onclick="location.href='https://connectedcannabis.github.io/projection/'">View Chart</button>
-            </div>
+  <div class="row g-4 mb-4">
+    <!-- Repeat this block for each chart -->
+    <div class="col-md-4">
+      <div class="card h-100">
+        <div class="card-header">California Yield Projections by Site</div>
+        <div class="card-body">
+          <img src="chart.png" alt="Chart 1 thumbnail" class="chart-thumb mb-2" />
+          <p class="small text-muted justify">
+            This chart uses the updated room yield goals and site processing times, to forecast Est. LTB for all of California to the end of 2026. Data is filterable by harvest date or FGI date and can be displayed in a weekly or monthly format.</br><i>Updated: 6/24/2025</i>
+          </p>
+          <div class="d-grid">
+            <button class="btn btn-outline-primary" onclick="location.href='https://connectedcannabis.github.io/projection/'">View Chart</button>
           </div>
         </div>
       </div>
+    </div>
 
-      <!-- Chart 2 -->
-      <div class="col-md-4">
-        <div class="card h-100">
-          <div class="card-header">Strain Level, Yield, QC, & THC data</div>
-          <div class="card-body">
-            <img src="chart2.png" alt="Chart 2 thumbnail" class="chart-thumb mb-2" />
-            <p class="small text-muted justify">
-              This chart combines yield data and QC fail data from the Master Schedule with THC & terpenoid data from the QC response data. You can update dataset by site, by brand, and can recalculate based on your selected time period.</br><i>Updated: 6/24/2025</i>
-            </p>
-            <div class="d-grid">
-              <button class="btn btn-outline-primary" onclick="location.href='https://strains.onrender.com/'">View Chart</button>
-            </div>
+    <!-- Chart 2 -->
+    <div class="col-md-4">
+      <div class="card h-100">
+        <div class="card-header">Strain Level, Yield, QC, & THC data</div>
+        <div class="card-body">
+          <img src="chart2.png" alt="Chart 2 thumbnail" class="chart-thumb mb-2" />
+          <p class="small text-muted justify">
+            This chart combines yield data and QC fail data from the Master Schedule with THC & terpenoid data from the QC response data. You can update dataset by site, by brand, and can recalculate based on your selected time period.</br><i>Updated: 6/24/2025</i>
+          </p>
+          <div class="d-grid">
+            <button class="btn btn-outline-primary" onclick="location.href='https://strains.onrender.com/'">View Chart</button>
           </div>
         </div>
       </div>
+    </div>
 
-      <!-- Chart 3 -->
-      <div class="col-md-4">
-        <div class="card h-100">
-          <div class="card-header">Forecasted Biomass Breakdown by Brand</div>
-          <div class="card-body">
-            <img src="chart3.png" alt="Chart 3 thumbnail" class="chart-thumb mb-2" />
-            <p class="small text-muted justify">
-              This chart uses the actual and estimated yield from the master schedule to demonstrate brand allocation by Act./Est. lbs. Forecast is extended by using the output of planting mix to get the most forward looking forcast of production by brand</br><i>Updated: 6/24/2025</i>
-            </p>
-            <div class="d-grid">
-              <button class="btn btn-outline-primary" onclick="location.href='https://connectedcannabis.github.io/brands/'">View Chart</button>
-            </div>
+    <!-- Chart 3 -->
+    <div class="col-md-4">
+      <div class="card h-100">
+        <div class="card-header">Forecasted Biomass Breakdown by Brand</div>
+        <div class="card-body">
+          <img src="chart3.png" alt="Chart 3 thumbnail" class="chart-thumb mb-2" />
+          <p class="small text-muted justify">
+            This chart uses the actual and estimated yield from the master schedule to demonstrate brand allocation by Act./Est. lbs. Forecast is extended by using the output of planting mix to get the most forward looking forcast of production by brand</br><i>Updated: 6/24/2025</i>
+          </p>
+          <div class="d-grid">
+            <button class="btn btn-outline-primary" onclick="location.href='https://connectedcannabis.github.io/brands/'">View Chart</button>
           </div>
         </div>
       </div>
+    </div>
 
-      <!-- Chart 4 -->
-      <div class="col-md-4">
-        <div class="card h-100">
-          <div class="card-header">Clone Survival Rates</div>
-          <div class="card-body">
-            <img src="chart4.png" alt="Chart 4 thumbnail" class="chart-thumb mb-2" />
-            <p class="small text-muted justify">
-              This chart displays clone survival rates for all strains currently on menu. Descriptive statistics are calculated from Bandwagon's cut record beginning in Jan. 2025. Strains are ranked from left to right based on their propagation performance. Filtering by brand is supported by the dropdown menu on the top left.</br><i>Updated: 6/30/2025</i>
-            </p>
-            <div class="d-grid">
-              <button class="btn btn-outline-primary" onclick="location.href='https://connectedcannabis.github.io/CloneSurvival/'">View Chart</button>
-            </div>
+    <!-- Chart 4 -->
+    <div class="col-md-4">
+      <div class="card h-100">
+        <div class="card-header">Clone Survival Rates</div>
+        <div class="card-body">
+          <img src="chart4.png" alt="Chart 4 thumbnail" class="chart-thumb mb-2" />
+          <p class="small text-muted justify">
+            This chart displays clone survival rates for all strains currently on menu. Descriptive statistics are calculated from Bandwagon's cut record beginning in Jan. 2025. Strains are ranked from left to right based on their propagation performance. Filtering by brand is supported by the dropdown menu on the top left.</br><i>Updated: 6/30/2025</i>
+          </p>
+          <div class="d-grid">
+            <button class="btn btn-outline-primary" onclick="location.href='https://connectedcannabis.github.io/CloneSurvival/'">View Chart</button>
           </div>
         </div>
       </div>
+    </div>
 
-      <!-- Chart 5 -->
-      <div class="col-md-4">
-        <div class="card h-100">
-          <div class="card-header">California QC Fails Dashboard</div>
-          <div class="card-body">
-            <img src="chart5.png" alt="Chart 5 thumbnail" class="chart-thumb mb-2" />
-            <p class="small text-muted justify">
-              Tableau dashboard of all QC fails year-to-date based on the Master Schedule's Act. and Adj. lbs. Data is displayed overtime and is broken down by turn and strain for further analysis.</br><i>Updated: Daily</i>
-            </p>
-            <div class="d-grid">
-              <button class="btn btn-outline-primary" onclick="location.href='https://10ay.online.tableau.com/#/site/connectedca/views/QCFailsDashboard/Dashboard?:iid=1'">View Chart</button>
-            </div>
+    <!-- Chart 5 -->
+    <div class="col-md-4">
+      <div class="card h-100">
+        <div class="card-header">California QC Fails Dashboard</div>
+        <div class="card-body">
+          <img src="chart5.png" alt="Chart 5 thumbnail" class="chart-thumb mb-2" />
+          <p class="small text-muted justify">
+            Tableau dashboard of all QC fails year-to-date based on the Master Schedule's Act. and Adj. lbs. Data is displayed overtime and is broken down by turn and strain for further analysis.</br><i>Updated: Daily</i>
+          </p>
+          <div class="d-grid">
+            <button class="btn btn-outline-primary" onclick="location.href='https://10ay.online.tableau.com/#/site/connectedca/views/QCFailsDashboard/Dashboard?:iid=1'">View Chart</button>
           </div>
         </div>
       </div>
+    </div>
 
-      <!-- Chart 6 -->
-      <div class="col-md-4">
-        <div class="card h-100">
-          <div class="card-header">Chart 6</div>
-          <div class="card-body">
-            <img src="chart.png" alt="Chart 6 thumbnail" class="chart-thumb mb-2" />
-            <div class="d-grid">
-              <button class="btn btn-outline-primary" onclick="location.href='chart6.html'">View Chart</button>
-            </div>
+    <!-- Chart 6 -->
+    <div class="col-md-4">
+      <div class="card h-100">
+        <div class="card-header">Chart 6</div>
+        <div class="card-body">
+          <img src="chart.png" alt="Chart 6 thumbnail" class="chart-thumb mb-2" />
+          <div class="d-grid">
+            <button class="btn btn-outline-primary" onclick="location.href='chart6.html'">View Chart</button>
           </div>
         </div>
       </div>
     </div>
   </div>
-
+  </div>
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
